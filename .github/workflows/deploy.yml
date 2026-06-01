@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           repository: tricky-bits/builder
-          ref: main
+          ref: driquet/builder
           path: builder
 
       - name: Set up Go
