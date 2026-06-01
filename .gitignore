@@ -1,0 +1,5 @@
+# Build output — regenerate with `make build`
+/public/
+
+# Locally built builder binary (from sibling ../builder)
+/builder

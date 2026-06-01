@@ -1,0 +1,41 @@
+name: Build check
+
+# Validates that the site builds against the builder. Runs on pull requests and
+# on demand. No deploy — publishing to Pages happens in the deploy workflow on
+# pushes to main.
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      # Lay website and builder out as siblings so themes_dir="../builder/themes"
+      # resolves from the website working directory.
+      - name: Checkout website
+        uses: actions/checkout@v6
+        with:
+          path: website
+
+      - name: Checkout builder
+        uses: actions/checkout@v6
+        with:
+          repository: tricky-bits/builder
+          ref: main
+          path: builder
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: builder/go.mod
+
+      - name: Build builder
+        working-directory: builder
+        run: go build -o builder .
+
+      - name: Build site
+        working-directory: website
+        run: ../builder/builder build -c tbb.toml

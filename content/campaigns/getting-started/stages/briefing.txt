@@ -1,0 +1,8 @@
+TRICKY BITS — FIELD BRIEFING
+============================
+
+codeword: lighthouse
+
+On a real puzzle you'd have to work this value out from the file's contents.
+Here it's handed to you so you can focus on the mechanic: download the input,
+read it, type what you find.

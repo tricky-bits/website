@@ -1,0 +1,39 @@
+[build]
+input_dir = "content"
+output_dir = "public"
+themes_dir = "../builder/themes"
+theme = "base"
+# XOR key obfuscating future-stage metadata, hints, and completion messages in
+# rendered HTML. Not a secret — committed in config. "" disables obfuscation.
+obfuscation_key = "tricky-bits"
+
+[site]
+name = "Tricky Bits"
+base_path = "/"
+document_title = "Tricky Bits"
+# **bold** words in index_title become the gradient accent in the hero.
+index_title = "Decode **the unsolvable.**"
+index_subtitle = "Logical puzzles and architectural challenges from fellow problem solvers — solved right in your terminal-flavored browser."
+footer_slogan = "Built for problem solvers."
+copyright = "© 2026 Tricky Bits"
+
+[[site.nav_items]]
+label = "Home"
+href = "/index.html"
+
+[[site.nav_items]]
+label = "About"
+href = "/about.html"
+
+[[site.footer_items]]
+label = "About"
+href = "/about.html"
+
+[[site.footer_items]]
+label = "Terms & Privacy"
+href = "/terms.html"
+
+[[site.footer_items]]
+label = "GitHub"
+href = "https://github.com/tricky-bits"
+external = true

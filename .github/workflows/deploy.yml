@@ -1,0 +1,72 @@
+name: Deploy
+
+# Builds the site and publishes it to GitHub Pages on every push to main.
+# Pull requests are validated by build-check.yml (no deploy).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deploy; don't cancel an in-progress one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      # Lay website and builder out as siblings so themes_dir="../builder/themes"
+      # resolves from the website working directory.
+      - name: Checkout website
+        uses: actions/checkout@v6
+        with:
+          path: website
+
+      - name: Checkout builder
+        uses: actions/checkout@v6
+        with:
+          repository: tricky-bits/builder
+          ref: main
+          path: builder
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: builder/go.mod
+
+      - name: Build builder
+        working-directory: builder
+        run: go build -o builder .
+
+      - name: Build site
+        working-directory: website
+        run: ../builder/builder build -c tbb.toml
+
+      # The custom domain must live in the published artifact; a UI-set domain
+      # alone is overwritten by each artifact deploy.
+      - name: Add CNAME
+        run: echo 'trickybits.dev' > website/public/CNAME
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: website/public
+
+  deploy:
+    name: Deploy to Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,5 @@
+You found the bonus asset.
+
+This file was shipped under `assets:` rather than `inputs:`, so it wasn't listed
+as a downloadable chip — you only reached it because the stage text linked to it.
+That's the difference: inputs are advertised, assets just ride along.
