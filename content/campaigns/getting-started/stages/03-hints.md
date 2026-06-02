@@ -1,31 +1,27 @@
 ---
-title: Hints, on a Timer
+title: When You're Stuck
 author: Tricky Bits
 slug: hints
 difficulty: 1
 eta_minutes: 2
-next: input-files
+next: breather
 tags:
   - hints
-  - mechanics
 answer: "unlock"
-completion_message: "And you didn't even have to wait for the last hint."
+completion_message: "See? A hint had your back the whole time."
 hints:
   - wait_seconds: 0
-    text: "This hint is available **immediately** (`wait_seconds: 0`)."
-  - wait_seconds: 10
-    text: "This one unlocks after **10 seconds** on the stage."
-  - wait_seconds: 20
-    text: "Last one: the answer is the word for what hints do over time — they **unlock**."
+    text: "Stuck stages aren't a dead end. The hints are here to nudge you along."
+  - wait_seconds: 8
+    text: "Here's the nudge that matters: the answer is what hints do for you when you're stuck, they **unlock** the way forward."
 ---
 
-When a stage has you stuck, open its **hints** panel.
+When a stage has you stuck, you don't have to stare at it forever. Open its
+**hints** panel for a nudge in the right direction.
 
-Each hint has a timer. A hint with `wait_seconds: 0` is available the moment you
-open the stage; others stay locked until you've spent enough time here. The idea
-is to nudge you without handing over the answer too soon.
+Hints arrive gently. The first is there right away, and more become available
+the longer you sit with a stage. They're meant to point you toward the answer
+without spoiling the whole thing at once.
 
-This stage has three hints — available at 0, 10, and 20 seconds. Open the panel
-and watch them become clickable over time.
-
-No need to wait, though: the answer is **unlock**.
+This stage is the demo: the answer isn't written here in the body. Open the
+hints and let one of them tell you what to type.

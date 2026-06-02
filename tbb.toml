@@ -12,8 +12,8 @@ name = "Tricky Bits"
 base_path = "/"
 document_title = "Tricky Bits"
 # **bold** words in index_title become the gradient accent in the hero.
-index_title = "Decode **the unsolvable.**"
-index_subtitle = "Logical puzzles and architectural challenges from fellow problem solvers — solved right in your terminal-flavored browser."
+index_title = "Crack **the stack.**"
+index_subtitle = "A growing set of puzzles that fight back. No fluff, just the tricky bits, solved in your browser."
 footer_slogan = "Built for problem solvers."
 copyright = "© 2026 Tricky Bits"
 
