@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: "Getting **Started**"
 category: Onboarding
 slug: getting-started
 difficulty: 1
