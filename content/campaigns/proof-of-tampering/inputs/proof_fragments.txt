@@ -1,0 +1,7 @@
+F1 margin=a text="The remaining 2x2 determinant is the minor."
+F2 margin=l text="Multiply each cofactor by the entry it came from."
+F3 margin=l text="For the 3x3 matrix, delete row i and column j."
+F4 margin=c text="The result equals the determinant."
+F5 margin=e text="The final margin word identifies the method."
+F6 margin=p text="Attach sign (-1)^(i+j) to form the cofactor."
+F7 margin=a text="Sum these terms along the selected row."
